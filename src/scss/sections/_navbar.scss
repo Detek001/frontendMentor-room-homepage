@@ -5,6 +5,10 @@
   right: 0;
   z-index: 99;
 
+  @media (min-width: 768px) {
+    margin-top: 1rem;
+  }
+
   & > .container {
     justify-content: unset;
   }

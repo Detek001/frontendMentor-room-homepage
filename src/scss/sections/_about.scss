@@ -1,0 +1,39 @@
+@use '../custom.scss' as *;
+
+.about-section {
+
+
+  .about-image {
+    width: 100%;
+    @media (min-width: 768px) {
+      height: 40vh;
+      object-fit: cover;
+    }
+  }
+  .custom-col {
+    padding: 0;
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 2rem 0;
+    @media (min-width: 768px) {
+      height: 40vh;
+      margin: unset;
+    }
+
+    .about-heading {
+      line-height: 1;
+      color: #000;
+    }
+    .about-paragraph {
+      margin-bottom: 0;
+    }
+  }
+
+
+
+}

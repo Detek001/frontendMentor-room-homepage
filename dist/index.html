@@ -11546,6 +11546,12 @@ textarea.form-control-lg {
   right: 0;
 }
 
+@media (min-width: 768px) {
+  .navbar-custom {
+    margin-top: 1rem;
+  }
+}
+
 .navbar-custom > .container {
   justify-content: unset;
 }
@@ -11619,7 +11625,7 @@ textarea.form-control-lg {
 .custom-carousel {
   --right: calc(50% - 100px);
   --left: calc(100% - 100px);
-  --top: 200px;
+  --top: calc(250px - 50px);
 }
 
 .custom-carousel .carousel-image {
@@ -11630,7 +11636,7 @@ textarea.form-control-lg {
 
 @media (min-width: 768px) {
   .custom-carousel .carousel-image {
-    height: unset;
+    height: 60vh;
   }
 }
 
@@ -11638,26 +11644,34 @@ textarea.form-control-lg {
   padding: 0;
 }
 
-.custom-carousel .svg-wrapper {
-  width: 50px;
-  height: 50px;
-  background-color: #000;
+.custom-carousel .inner-row {
   justify-content: center;
   align-items: center;
-  display: flex;
 }
 
-@media (min-width: 1200px) {
-  .custom-carousel .svg-wrapper {
-    width: 70px;
-    height: 70px;
+@media (min-width: 768px) {
+  .custom-carousel .inner-row {
+    height: 60vh;
   }
 }
 
-.custom-carousel .inner-row {
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+.custom-carousel .carousel-text {
+  min-height: 220px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .custom-carousel .carousel-text {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .custom-carousel .carousel-text {
+    margin-bottom: 2rem;
+  }
 }
 
 .custom-carousel .carousel-text .carousel-heading {
@@ -11676,6 +11690,22 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
+.custom-carousel .carousel-button .svg-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+@media (min-width: 1400px) {
+  .custom-carousel .carousel-button .svg-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+}
+
 @media (min-width: 768px) {
   .custom-carousel .carousel-button {
     bottom: 0;
@@ -11683,8 +11713,8 @@ textarea.form-control-lg {
   }
 }
 
-.custom-carousel .carousel-button:hover {
-  opacity: .6;
+.custom-carousel .carousel-button:hover .svg-wrapper {
+  background-color: #252726;
 }
 
 .custom-carousel .carousel-button.left {
@@ -11707,11 +11737,78 @@ textarea.form-control-lg {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .custom-carousel .carousel-button.right {
     --right: calc(50% - 140px);
     right: var(--right);
   }
+}
+
+.custom-carousel .carousel-link {
+  align-items: center;
+  margin-top: 1rem;
+  display: flex;
+}
+
+.custom-carousel .carousel-link p {
+  color: #000;
+  margin-bottom: 0;
+  margin-right: 1rem;
+}
+
+.custom-carousel .carousel-link svg path {
+  fill: #000;
+}
+
+.custom-carousel .carousel-link svg path:hover {
+  fill: #a1a1a1;
+}
+
+.custom-carousel .carousel-link:hover p {
+  color: unset;
+}
+
+.custom-carousel .carousel-link:hover svg path {
+  fill: #a1a1a1;
+}
+
+.about-section .about-image {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .about-section .about-image {
+    height: 40vh;
+    object-fit: cover;
+  }
+}
+
+.about-section .custom-col {
+  padding: 0;
+}
+
+.about-section .about-text {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .about-section .about-text {
+    height: 40vh;
+    margin: unset;
+  }
+}
+
+.about-section .about-text .about-heading {
+  color: #000;
+  line-height: 1;
+}
+
+.about-section .about-text .about-paragraph {
+  margin-bottom: 0;
 }
 
 
@@ -11721,7 +11818,7 @@ textarea.form-control-lg {
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-custom navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-custom navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
           <img src="/static/images/logo.svg" alt="company logo">
@@ -11777,125 +11874,149 @@ textarea.form-control-lg {
 
   <main>
     <section>
-      <div class="carousel custom-carousel" id="carouselMain" data-bs-interval="false">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container-fluid carousel-container">
-              <div class="row">
-                <div class="col-12 col-md-6 custom-col">
-                  <img class="carousel-image" src="/static/images/desktop-image-hero-1.jpg" alt="">
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="row inner-row">
-                    <div class="col-10 col-md-8 carousel-text">
-                      <h1 class="carousel-heading">
-                        Discover innovative ways to decorate
-                      </h1>
-                      <p class="carousel-paragraph">
-                        We provide unmatched quality, comfort, and style for property owners across the country. 
-                        Our experts combine form and function in bringing your vision to life. Create a room in your 
-                        own style with our collection and make your property a reflection of you and what you love.
-                      </p>
-                      <a class="carousel-link" href="">
-                        Shop now
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="container-fluid carousel-container">
-              <div class="row">
-                <div class="col-12 col-md-6 custom-col">
-                  <img class="carousel-image" src="/static/images/desktop-image-hero-2.jpg" alt="">
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="row inner-row">
-                    <div class="col-10 col-md-8 carousel-text">
-                      <h1 class="carousel-heading">
-                        We are available all across the globe
-                      </h1>
-                      <p class="carousel-paragraph">
-                        With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-                        Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-                        store locator. Any questions? Don't hesitate to contact us today.
-                      </p>
-                      <a class="carousel-link" href="">
-                        Shop now
-                      </a>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 p-0">
+            <div class="carousel custom-carousel" id="carouselMain" data-bs-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container-fluid carousel-container">
+                    <div class="row">
+                      <div class="col-12 col-md-6 custom-col">
+                        <img class="carousel-image" src="/static/images/desktop-image-hero-1.jpg" srcset="/static/images/mobile-image-hero-1.jpg 375w, /static/images/desktop-image-hero-1.jpg 840w" alt="">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="row inner-row">
+                          <div class="col-10 col-md-8 carousel-text">
+                            <h1 class="carousel-heading">
+                              Discover innovative ways to decorate
+                            </h1>
+                            <p class="carousel-paragraph">
+                              We provide unmatched quality, comfort, and style for property owners across the country. 
+                              Our experts combine form and function in bringing your vision to life. Create a room in your 
+                              own style with our collection and make your property a reflection of you and what you love.
+                            </p>
+                            <a class="carousel-link" href="">
+                              <p>SHOP NOW</p> 
+                              <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill-rule="nonzero"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+      
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="container-fluid carousel-container">
-              <div class="row">
-                <div class="col-12 col-md-6 custom-col">
-                  <img class="carousel-image" src="/static/images/desktop-image-hero-3.jpg" alt="">
-                </div>
-                <div class="col-12 col-md-6 carousel-text">
-                  <div class="row inner-row">
-                    <div class="col-10 col-md-8 carousel-text">
-                      <h1 class="carousel-heading">
-                        Manufactured with the best materials
-                      </h1>
-                      <p class="carousel-paragraph">
-                        Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-                        to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-                        experience in this industry, we understand what customers want for their home and office.
-                      </p>
-                      <a class="carousel-link" href="">
-                        Shop now
-                      </a>
+      
+                <div class="carousel-item">
+                  <div class="container-fluid carousel-container">
+                    <div class="row">
+                      <div class="col-12 col-md-6 custom-col">
+                        <img class="carousel-image" src="/static/images/desktop-image-hero-2.jpg" srcset="/static/images/mobile-image-hero-2.jpg 375w, /static/images/desktop-image-hero-2.jpg 840w" alt="">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="row inner-row">
+                          <div class="col-10 col-md-8 carousel-text">
+                            <h1 class="carousel-heading">
+                              We are available all across the globe
+                            </h1>
+                            <p class="carousel-paragraph">
+                              With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+                              Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
+                              store locator. Any questions? Don't hesitate to contact us today.
+                            </p>
+                            <a class="carousel-link" href="">
+                              <p>SHOP NOW</p> 
+                              <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill-rule="nonzero"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+      
+                <div class="carousel-item">
+                  <div class="container-fluid carousel-container">
+                    <div class="row">
+                      <div class="col-12 col-md-6 custom-col">
+                        <img class="carousel-image" src="/static/images/desktop-image-hero-3.jpg" srcset="/static/images/mobile-image-hero-3.jpg 375w, /static/images/desktop-image-hero-3.jpg 840w" alt="">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="row inner-row">
+                          <div class="col-10 col-md-8 carousel-text">
+                            <h1 class="carousel-heading">
+                              Manufactured with the best materials
+                            </h1>
+                            <p class="carousel-paragraph">
+                              Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+                              to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+                              experience in this industry, we understand what customers want for their home and office.
+                            </p>
+                            <a class="carousel-link" href="">
+                              <p>SHOP NOW</p> 
+                              <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill-rule="nonzero"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev carousel-button left" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
+                  <div class="svg-wrapper">
+                    <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"></path></svg>
+                  </div>
+                </button>
+                <button class="carousel-control-next carousel-button right" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
+                  <div class="svg-wrapper">
+                    <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"></path></svg>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev carousel-button left" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
-            <div class="svg-wrapper">
-              <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"></path></svg>
-            </div>
-          </button>
-          <button class="carousel-control-next carousel-button right" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
-            <div class="svg-wrapper">
-              <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"></path></svg>
-            </div>
-          </button>
         </div>
       </div>
+
     </section>
 
     <section>
-      About our furniture
 
-      Our multifunctional collection blends design and function to suit your individual taste.
-      Make each room unique, or pick a cohesive theme that best express your interests and what
-      inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-      or anything in between. Product specialists are available to help you create your dream space.
+      <div class="container-fluid about-section">
+        <div class="row">
+          <div class="col-12 col-md-4 custom-col">
+            <img class="about-image" src="/static/images/image-about-dark.jpg" alt="about dark">
+          </div>
+          <div class="col-12 col-md-4 about-text">
+            <h2 class="about-heading">
+              About our furniture
+            </h2>
+            <p class="about-paragraph">
+              Our multifunctional collection blends design and function to suit your individual taste.
+              Make each room unique, or pick a cohesive theme that best express your interests and what
+              inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+              or anything in between. Product specialists are available to help you create your dream space.
+            </p>
+          </div>
+          <div class="col-12 col-md-4 custom-col">
+            <img class="about-image" src="/static/images/image-about-light.jpg" alt="about light">
+          </div>
+        </div>
+      </div>
+      
+
+
     </section>
   </main>
 
 
-
-
-
-
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
   <script>// modules are defined as an array
 // [ module function, map of requires ]
 //
@@ -12040,14 +12161,14 @@ textarea.form-control-lg {
       this[globalName] = mainExports;
     }
   }
-})({"epeMP":[function(require,module,exports) {
+})({"buwfS":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "4ab9b81f74b553e4";
+module.bundle.HMR_BUNDLE_ID = "4405258cb78cc9ee";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -12429,7 +12550,7 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"5ebPG":[function(require,module,exports) {
+},{}],"g0N9P":[function(require,module,exports) {
 var _indexJs = require("./index.js");
 
 },{"./index.js":"bB7Pu"}],"bB7Pu":[function(require,module,exports) {
@@ -15309,7 +15430,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["epeMP","5ebPG"], "5ebPG", "parcelRequirebe84")
+},{}]},["buwfS","g0N9P"], "g0N9P", "parcelRequirebe84")
 
 </script>
 </body>
