@@ -27,7 +27,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 $link-decoration: none;
 /* $link-hover-color: $very-vark-blue;  */
 $navbar-brand-margin-end: 3rem;
-$navbar-light-color: #fff;
+$navbar-dark-color: #fffffff2;
+$navbar-dark-hover-color: #fff;
 $navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg width='20' height='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z' fill='#{$navbar-light-color}' fill-rule='evenodd'/></svg>");
 $navbar-dark-toggler-border-color: none;
 $navbar-toggler-focus-width: 0;
