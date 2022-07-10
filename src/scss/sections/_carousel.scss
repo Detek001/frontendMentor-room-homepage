@@ -45,7 +45,6 @@
 
     .carousel-heading {
       line-height: 1;
-  
       color: #000;
     }
 
@@ -97,8 +96,6 @@
         --right: calc(50% - 140px);
         right: var(--right);
       }
-
-      
     }
   }
 
@@ -106,7 +103,6 @@
     display: flex;
     align-items: center;
     margin-top: 1rem;
-
     p {
       margin-bottom: 0;
       color: #000;
